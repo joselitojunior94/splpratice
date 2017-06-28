@@ -16,7 +16,7 @@ public class View {
 	
 	public View(){
 		janela = new JFrame("Calculadora");
-		janela.setSize(400,420);
+		janela.setSize(400,500);
 		janela.setVisible(true);
 		panel = new JPanel(new GridLayout(4,4,4,4));
 		
@@ -38,8 +38,6 @@ public class View {
 	
 	public void setFieldOutput(){
 		resultado = new JLabel();
-		resultado.setText(" Resultado: ");
-		panel.add(resultado);
 		output = new JTextField(20);
 		output.setSize(10,10);
 		

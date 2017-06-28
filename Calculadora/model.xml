@@ -9,10 +9,18 @@
 					<feature mandatory="true" name="Subtrair"/>
 					<feature mandatory="true" name="Multiplicar"/>
 					<feature mandatory="true" name="Dividir"/>
+					<feature mandatory="true" name="Exponencial"/>
 				</or>
 			</and>
 		</struct>
-		<constraints/>
+		<constraints>
+			<rule>
+				<imp>
+					<var>Exponencial</var>
+					<var>Multiplicar</var>
+				</imp>
+			</rule>
+		</constraints>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
 		<featureOrder userDefined="false"/>

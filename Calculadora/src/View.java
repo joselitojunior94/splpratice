@@ -38,7 +38,7 @@ public   class  View {
 	
 	public View  (){
 		janela = new JFrame("Calculadora");
-		janela.setSize(400,420);
+		janela.setSize(400,500);
 		janela.setVisible(true);
 		panel = new JPanel(new GridLayout(4,4,4,4));
 		
@@ -138,6 +138,29 @@ public   class  View {
 		panel.add(botaoDiv);	
 		janela.add(panel);
 		janela.revalidate();
+	
+		botaoExp = new JButton("^");
+		botaoExp .setSize(5,5);
+		
+		botaoExp.addActionListener(new ActionListener()
+	    {
+		      public void actionPerformed(ActionEvent e)
+		      {
+		    	  try{
+		    		  Calcular c = new Calcular();	  
+		    		  output.setText(Integer.toString(
+		    			  c.exponencial(Integer.parseInt(input01.getText()), 
+		    					  Integer.parseInt(input02.getText()))));
+		    		  janela.revalidate();
+		    	  }catch(Exception f){
+			    		  JOptionPane.showMessageDialog(null,"Operações somente com inteiros!");
+		    	  }
+		      }
+		});
+		
+		panel.add(botaoExp);	
+		janela.add(panel);
+		janela.revalidate();
 	}
 
 	
@@ -157,8 +180,6 @@ public   class  View {
 	
 	public void setFieldOutput(){
 		resultado = new JLabel();
-		resultado.setText(" Resultado: ");
-		panel.add(resultado);
 		output = new JTextField(20);
 		output.setSize(10,10);
 		
@@ -184,6 +205,9 @@ public   class  View {
 
 	
 	JButton botaoDiv;
+
+	
+	JButton botaoExp;
 
 
 }
