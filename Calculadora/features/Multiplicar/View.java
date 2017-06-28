@@ -27,8 +27,8 @@ public class View {
 		    					  Integer.parseInt(input02.getText()))));
 		    		  janela.revalidate();
 		    	  }catch(Exception f){
-			    		  System.out.println("Existe um erro ao calcular a multiplicacao");
-			    	  }
+			    		  JOptionPane.showMessageDialog(null,"Operações somente com inteiros!");
+		    	  }
 		      }
 		});
 		

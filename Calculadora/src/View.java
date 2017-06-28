@@ -61,7 +61,7 @@ public   class  View {
 		    					  Integer.parseInt(input02.getText()))));
 		    		  janela.revalidate();
 		    	  }catch(Exception f){
-		    		  System.out.println("Existe um erro ao calcular a soma");
+		    		  JOptionPane.showMessageDialog(null,"Operações somente com inteiros!");
 		    	  }
 		      }
 		});
@@ -84,7 +84,7 @@ public   class  View {
 		    					  Integer.parseInt(input02.getText()))));
 		    		  janela.revalidate();
 		    	  }catch(Exception f){
-		    		  System.out.println("Existe um erro ao calcular subtracao");
+		    		  JOptionPane.showMessageDialog(null,"Operações somente com inteiros!");
 		    	  }
 		      }
 		});
@@ -107,12 +107,35 @@ public   class  View {
 		    					  Integer.parseInt(input02.getText()))));
 		    		  janela.revalidate();
 		    	  }catch(Exception f){
-			    		  System.out.println("Existe um erro ao calcular a multiplicacao");
-			    	  }
+			    		  JOptionPane.showMessageDialog(null,"Operações somente com inteiros!");
+		    	  }
 		      }
 		});
 		
 		panel.add(botaoMult);	
+		janela.add(panel);
+		janela.revalidate();
+	
+		botaoDiv = new JButton("/");
+		botaoDiv .setSize(5,5);
+		
+		botaoDiv.addActionListener(new ActionListener()
+	    {
+		      public void actionPerformed(ActionEvent e)
+		      {
+		    	  try{
+		    		  Calcular c = new Calcular();	  
+		    		  output.setText(Integer.toString(
+		    			  c.dividir(Integer.parseInt(input01.getText()), 
+		    					  Integer.parseInt(input02.getText()))));
+		    		  janela.revalidate();
+		    	  }catch(Exception f){
+		    		  JOptionPane.showMessageDialog(null,"Operações somente com inteiros!");
+		    	  }
+		      }
+		});
+		
+		panel.add(botaoDiv);	
 		janela.add(panel);
 		janela.revalidate();
 	}
@@ -158,6 +181,9 @@ public   class  View {
 
 	
 	JButton botaoMult;
+
+	
+	JButton botaoDiv;
 
 
 }
